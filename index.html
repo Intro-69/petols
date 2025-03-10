@@ -6,22 +6,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Petols</title>
 	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-		}
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0 20px;
-			background-color: #0E0E11;
-			color: white;
-			height: 65px;
-			display: flex;
-			align-items: center;
-			position: relative;
-		}
+	ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    background-color: #0E0E11;
+    color: white;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar stays on top */
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding-top: 65px; /* Prevents content from being hidden under navbar */
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
 		li {
 			display: flex;
 			align-items: center;
@@ -40,28 +46,32 @@
 			cursor: pointer;
 		}
 		.user-container {
-			margin-left: auto;
-		}
+    margin-left: auto; /* Pushes elements to the right */
+    display: flex;
+    align-items: center;
+}
 		.user {
 			height: 30px;
 			border-radius: 50%;
 		}
 		button {
-			height: 35px;
-			background-color: #00B1CC;
-			border: none;
-			font-size: 15px;
-			border-radius: 6px;
-			padding: 5px 15px;
-			cursor: pointer;
-			margin-left: 15px;
-		}
+    height: 35px;
+    background-color: #00B1CC;
+    border: none;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-left: 15px;
+    color: white;
+    white-space: nowrap; /* Prevents button from breaking into two lines */
+}
 		.content:hover {
 			background-color: #00B1CC;
 			border-radius: 5px;
 		}
 
-		/* Hidden by default */
+		/* Sidebar */
 		.menu-container {
 			display: none;
 			position: fixed;
@@ -70,9 +80,10 @@
 			width: 250px;
 			height: 100%;
 			background-color: #0E0E11;
-			z-index: 10;
+			z-index: 1000;
 			text-align: left;
 			transition: left 0.3s ease-in-out;
+			padding-top: 20px;
 		}
 		.menu-container.show {
 			display: block;
@@ -83,6 +94,21 @@
 			padding: 20px;
 			display: block;
 			color: white;
+		}
+
+		/* Overlay */
+		.overlay {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 999;
+		}
+		.overlay.show {
+			display: block;
 		}
 
 		/* Responsive Navbar */
@@ -108,13 +134,23 @@
 				display: none;
 			}
 		}
+		@media screen and (max-width: 600px) {
+    .content-box {
+        display: none;
+    }
+    button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
 	</style>
 </head>
 <body>
    <ul>
    	<li class="menu-toggle">
    		<button class="menu-btn">&#9776;</button>
-   		<button class="close-btn" style="display:none;">&times;</button>
+   		
    	</li>
    	<li><h1 class="name">kingpetols1</h1></li>
    	
@@ -135,37 +171,49 @@
    	<li><button><strong>Subscribe</strong></button></li>
    </ul>
 
-   <!-- Mobile Menu (Hidden initially) -->
+   <!-- Mobile Menu -->
    <div class="menu-container">
+   	<button class="close-btn" style="display:none;">&times;</button>
       <span class="content"><strong>Videos</strong></span>
       <span class="content"><strong>Shorts</strong></span>
       <span class="content"><strong>Live</strong></span>
       <span class="content"><strong>Playlists</strong></span>
       <span class="content"><strong>Posts</strong></span>
-   	<span class="content"><strong>Discord</strong></span>
-
+   	  <span class="content"><strong>Discord</strong></span>
    </div>
+
+   <!-- Overlay -->
+   <div class="overlay"></div>
 
    <script type="text/javascript">
    	const menuBtn = document.querySelector('.menu-btn');
    	const closeBtn = document.querySelector('.close-btn');
    	const menuContainer = document.querySelector('.menu-container');
+   	const overlay = document.querySelector('.overlay');
    	const body = document.body;
-   	const menuToggle = document.querySelector('.menu-toggle');
+
+   	// Function to open the menu
+   	function openMenu() {
+   		menuContainer.classList.add('show');
+   		overlay.classList.add('show');
+   		menuBtn.style.display = 'none';
+   		closeBtn.style.display = 'inline-block';
+   		body.style.overflow = 'hidden';  // Prevent scrolling
+   	}
+
+   	// Function to close the menu
+   	function closeMenu() {
+   		menuContainer.classList.remove('show');
+   		overlay.classList.remove('show');
+   		menuBtn.style.display = 'inline-block';
+   		closeBtn.style.display = 'none';
+   		body.style.overflow = '';  // Allow scrolling
+   	}
 
    	// Toggle menu visibility
-   	menuBtn.addEventListener('click', function() {
-   		menuContainer.classList.toggle('show');
-   		menuBtn.style.display = 'none';
-   		closeBtn.style.display = 'inline-block';  // Show close button
-   	});
-
-   	// Close the menu when close button is clicked
-   	closeBtn.addEventListener('click', function() {
-   		menuContainer.classList.remove('show');
-   		menuBtn.style.display = 'inline-block';  // Show hamburger icon again
-   		closeBtn.style.display = 'none';  // Hide close button
-   	});
+   	menuBtn.addEventListener('click', openMenu);
+   	closeBtn.addEventListener('click', closeMenu);
+   	overlay.addEventListener('click', closeMenu);
    </script>
 </body>
 </html>
