@@ -67,7 +67,7 @@ body {
     white-space: nowrap; /* Prevents button from breaking into two lines */
 }
         .content:hover {
-            background-color: #00B1CC;
+            background-color: #00BACE;
             border-radius: 5px;
         }
 
@@ -122,6 +122,7 @@ body {
             width: 100%;
             display: block;
             filter: blur(0px) brightness(50%); /* Change these values */
+            pointer-events: none; /* Disables user interaction with the video */
         }
 
         /* Responsive Navbar */
@@ -199,11 +200,12 @@ body {
    <div class="overlay"></div>
 
    <div class="video-container">
-        <video id="myVideo" autoplay muted playsinline loop>
-            <source src="C:\Users\Nischal\Downloads\Mobile Player.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+      <!-- Video without controls -->
+      <video id="myVideo" autoplay muted playsinline loop>
+          <source src="C:\Users\Nischal\Downloads\Mobile Player.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+   </div>
 
    <script type="text/javascript">
     const menuBtn = document.querySelector('.menu-btn');
@@ -234,7 +236,6 @@ body {
     menuBtn.addEventListener('click', openMenu);
     closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
-
 
     const video = document.getElementById("myVideo");
 
