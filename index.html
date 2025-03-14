@@ -14,7 +14,6 @@
             box-sizing: border-box;
         }
         
-        /* Navbar */
         ul {
             list-style: none;
             padding: 0 20px;
@@ -34,7 +33,6 @@
             font-family: Arial, sans-serif;
             padding-top: 65px;
             overflow-x: hidden;
-            background: linear-gradient(90deg, #E8F9FF, #CAF5FF, #D8DAFF);
         }
 
         li {
@@ -130,23 +128,24 @@
         }
 
         /* Main Section */
-        .main-body {
+        .body-a {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            min-height: 100vh;
+            min-height: 90vh;
             padding: 5%;
             flex-wrap: wrap;
+            background: linear-gradient(90deg, #E8F9FF, #CAF5FF, #D8DAFF);
         }
 
         .text-container {
-            max-width: 50%;
+            max-width: 40%;
         }
 
         .h1-main {
             font-size: 50px;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
         }
 
         .p-main {
@@ -179,8 +178,11 @@
             background-color: #BED8DE;
             scale: 1.1;
         }
+        .a-tag{
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* Image */
         .img-container {
             flex: 1;
             display: flex;
@@ -193,48 +195,115 @@
             height: auto;
             border: 1px solid red;
         }
+        .menu-btn{
+            margin-left: -8px;
+        }
+        .body-b{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 60vh;
+            padding: 5%;
+            flex-wrap: wrap;
+            background: #FFFFFF;
+        }
+        .about-h1{
+            font-size: 50px;
+            margin-left: 10%;
+            margin-top: 12%;
+            margin-bottom: 6%;
+        }
+        .about-p{
+            line-height: 1.5;
+            
+        }
+        .video-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            border: 2px solid red;
+        }
+        #background-video {
+            max-width: 100%;
+            height: 80%;
+            object-fit: cover;
+            filter: brightness(100%) blur(10px);
+            pointer-events: none;
+            border-radius: 0;
+        }
 
         /* Mobile Responsive */
-        @media screen and (max-width: 768px) {
-            .content-box {
-                display: none;
-            }
+        /* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        font-size: 18px;
+        margin-left: 5px;
+    }
 
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                font-size: 20px;
-                margin-right: 15px;
-            }
+    .name {
+        font-size: 20px;
+        margin-left: 5px;
+    }
 
-            .main-body {
-                flex-direction: column;
-                text-align: center;
-                padding: 10%;
-            }
+    .menu-container {
+        width: 30%;
+    }
 
-            .text-container {
-                max-width: 100%;
-            }
+    .content-box {
+        display: none;
+    }
 
-            .h1-main {
-                font-size: 35px;
-            }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+        margin-right: 15px;
+    }
 
-            .p-main {
-                font-size: 14px;
-            }
+    .body-a {
+        flex-direction: column;
+        text-align: center;
+        padding: 10%;
+    }
+    
+    .body-b {
+        flex-direction: column;
+        text-align: center;
+        padding: 10%;
+    }
 
-            .view-you, .view-tik {
-                width: 100%;
-                max-width: 200px;
-                margin-bottom: 8px;
-            }
+    .text-container {
+        max-width: 100%;
+    }
 
-            .img-chopper {
-                max-width: 90%;
-            }
-        }
+    .h1-main {
+        font-size: 35px;
+    }
+
+    .p-main {
+        font-size: 14px;
+    }
+
+    .view-you, .view-tik {
+        width: 100%;
+        max-width: 200px;
+        margin-bottom: 8px;
+    }
+
+    .img-chopper {
+        max-width: 90%;
+    }
+    
+    .about-h1 {
+        font-size: 35px;
+    }
+    
+    .about-p {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -243,56 +312,72 @@
         <button class="menu-btn">&#9776;</button>
     </li>
     <li><h1 class="name">kingpetols1</h1></li>
-    <script src="https://apis.google.com/js/platform.js"></script>
-
-<div class="g-ytsubscribe" data-channelid="UC1KoykoDcSL7jbuKvuiY3bw" data-layout="full" data-theme="dark" data-count="default"></div>
-       <a href="https://www.youtube.com/channel/UC1KoykoDcSL7jbuKvuiY3bw?sub_confirmation=1" target="_blank">
-    <button>Subscribe</button>
-</a>
-
+    
     
     <li class="content-box">
-        <span class="content"><strong>Videos</strong></span>
-        <span class="content"><strong>Shorts</strong></span>
-        <span class="content"><strong>Live</strong></span>
-        <span class="content"><strong>Playlists</strong></span>
-        <span class="content"><strong>Posts</strong></span>
-        <span class="content"><strong>Discord</strong></span>
+
+        <a class="a-tag" href="https://www.youtube.com/@kingpetols1/featured" target="_blank"><span class="content"><strong>Home</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/videos" target="_blank"><span class="content"><strong>Videos</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/shorts" target="_blank"><span class="content"><strong>Shorts</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/streams" target="_blank"><span class="content"><strong>Live</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/playlists" target="_blank"><span class="content"><strong>Playlist</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/community"><span class="content"><strong>Posts</strong></span></a>
+     <a class="a-tag" href="https://discord.com/channels/1269042103929933845/1299786621339828285" target="_blank"><span class="content"><strong>Discord</strong></span></a>
     </li>
 
     <li class="user-container">
-        <img class="user" src="https://yt3.googleusercontent.com/q-UAt5t0sI76RNoC4_afTIK-1NZAnUJ37W4E9EUn8bKOGJ_AI_B-C4109eDPVI17Oda7kNx2Pw=s160-c-k-c0x00ffffff-no-rj">
-    </li>
-    <li><button><strong>Subscribe</strong></button></li>
+        <img class="user" src="https://yt3.googleusercontent.com/q-UAt5t0sI76RNoC4_afTIK-1NZAnUJ37W4E9EUn8bKOGJ_AI_B-C4109eDPVI17Oda7kNx2Pw=s160-c-k-c0x00ffffff-no-rj"><li>
+
+
+    <li><a href="https://www.youtube.com/channel/UC1KoykoDcSL7jbuKvuiY3bw?sub_confirmation=1" target="_blank">
+    <button><strong>Subscribe</strong></button></a></li>
    </ul>
 
    <div class="menu-container">
+
       <button class="close-btn">&times;</button>
-      <span class="content"><strong>Home</strong></span>
-      <span class="content"><strong>Videos</strong></span>
-      <span class="content"><strong>Shorts</strong></span>
-      <span class="content"><strong>Live</strong></span>
-      <span class="content"><strong>Playlists</strong></span>
-      <span class="content"><strong>Posts</strong></span>
-      <span class="content"><strong>Discord</strong></span>
-   </div>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/featured" target="_blank"><span class="content"><strong>Home</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/videos" target="_blank"><span class="content"><strong>Videos</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/shorts" target="_blank"><span class="content"><strong>Shorts</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/streams" target="_blank"><span class="content"><strong>Live</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/playlists" target="_blank"><span class="content"><strong>Playlist</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/community"><span class="content"><strong>Posts</strong></span></a>
+     <a class="a-tag" href="https://discord.com/channels/1269042103929933845/1299786621339828285" target="_blank"><span class="content"><strong>Discord</strong></span></a>   </div>
 
    <div class="overlay"></div>
 
-   <div class="main-body">
-      <div class="text-container">
-          <h1 class="h1-main"><strong>The GOAT of <br> Mobile PVP</strong></h1>
-          <p class="p-main">✨TOP 25 MOBILE FOR NA✨(confirmed by top NA player) Intrested in bloxfruit pvp videos? maybe some mobile pvp (bounty hunt)? You are in right channel, we post mobile Bounty Hunt videos weekly! We have a playlist of Sword and Fruit bountyHunt which you can <br> watch and enjoy don't forget to grab some popcorn :>. </p></p>
+   <div class="body-a">
+       <div class="text-container">
+          <h1 class="h1-main"><strong>Welcome to the official <br>fan site of kingpetols1!</strong></h1>
+          <p class="p-main">✨TOP 25 MOBILE FOR NA✨(confirmed by top NA player). Dive into his gaming world, explore his latest content, and stay updated with everything about your favorite gaming creator.</p></p>
           <a href="https://www.youtube.com/@kingpetols1/video"><button class="view-you">View Youtube <i class="fa-solid fa-arrow-right"></i></button></a>
 
           <a href="https://www.tiktok.com/@nikothemonsterr"><button class="view-tik">View Tiktok <i class="fa-solid fa-arrow-right"></i></button></a>
-
-
-      </div>
+          </div>
       <div class="img-container">
           <img class="img-chopper" src="Screenshot 2025-03-11 175238.png">
       </div>
    </div>
+      
+
+<div class="body-b">
+  <div class="text-container">
+    <h1 class="h1-main"><strong>About</strong></h1>
+    <p class="p-main">
+      kingpetols1 is a gaming content creator known for his exciting gameplay videos, mainly focusing on Blox Fruits and other popular games. With a growing fanbase on YouTube and TikTok, he is recognized for his engaging commentary, PvP skills, and entertaining challenges.
+    </p>
+  </div>
+    <div class="video-container">
+        <video id="background-video" autoplay loop muted playsinline>
+            <source src="bloxfruits.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+  </div>
+      </div>
+
+
+
+      <script src="https://apis.google.com/js/platform.js"></script>
       <script type="text/javascript">
     const menuBtn = document.querySelector('.menu-btn');
     const closeBtn = document.querySelector('.close-btn');
@@ -300,28 +385,47 @@
     const overlay = document.querySelector('.overlay');
     const body = document.body;
 
-    // Function to open the menu
+    
     function openMenu() {
         menuContainer.classList.add('show');
         overlay.classList.add('show');
         menuBtn.style.display = 'none';
         closeBtn.style.display = 'inline-block';
-        body.style.overflow = 'hidden';  // Prevent scrolling
+        body.style.overflow = 'hidden';   
     }
-
-    // Function to close the menu
+    
     function closeMenu() {
         menuContainer.classList.remove('show');
         overlay.classList.remove('show');
         menuBtn.style.display = 'inline-block';
         closeBtn.style.display = 'none';
-        body.style.overflow = '';  // Allow scrolling
-    }
+        body.style.overflow = ''; 
+            }
 
-    // Toggle menu visibility
     menuBtn.addEventListener('click', openMenu);
     closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
+
+   // video script!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   // video script!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   // video script!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+       const video = document.getElementById("background-video");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+        if (entry.isIntersecting) {
+           
+            video.play();
+        } else {
+           
+            video.pause();
+        }
+    });
+}, { threshold: 0.7 });
+
+observer.observe(video);
+
    </script>
 </body>
 </html>
