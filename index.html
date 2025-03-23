@@ -30,7 +30,7 @@
         ul {
             list-style: none;
             padding: 0 20px;
-            background-color: #0E0E11;
+            background-color: #222222;
             color: white;
             height: 65px;
             display: flex;
@@ -231,22 +231,13 @@
         .menu-btn{
             margin-left: -8px;
         }
-        .body-b{
+        .body-b, .body-c, .body-d{
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
             min-height: 60vh;
-            padding: 5%;
-            flex-wrap: wrap;
-        }
-        .body-c, .body-d{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            min-height: 60vh;
-            padding: 5%;
+            padding: 2.5%;
             flex-wrap: wrap;
         }
         .about-h1{
@@ -294,6 +285,7 @@
             height: 3px;
             color: gray; 
             background: gray;
+            margin-bottom: 4%;
         }
 
 
@@ -354,18 +346,18 @@
             height: 20px;
             margin-right: 8px;
         }
-        .p-mainc20, .p-mainc30 {
+        .p-mainc20, .p-mainc30{
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
             margin-top: 0;
             color: #444;
         }
-        .h1-mainc20:first-child .p-mainc20, .active .p-mainc20 {
+        .h1-mainc20:first-child .p-mainc20, .active .p-mainc20{
             max-height: 200px;
             margin-top: 8px;
         }
-        .h1-mainc30:first-child .p-mainc30, .activesec .p-mainc30 {
+        .h1-mainc30:first-child .p-mainc30, .activesec .p-mainc30{
             max-height: 200px;
             margin-top: 8px;
         }
@@ -382,17 +374,17 @@
             font-size: 50px;
             margin-bottom: 10px;
         }
-        .body-c-h3, .body-d-h3{
+        .body-c-h3, .body-d-h3, .body-e-h3, .body-f-h3{
            font-weight: bold;
            display: inline;
            width: 50%;
            font-size: 50px;
            margin-bottom: 10px;
-           background: linear-gradient( 90deg, #00BACE, lightgreen ,#00BACE) no-repeat bottom left / 0% 4px; 
+           background: linear-gradient( 90deg, lightgreen, lightgreen) no-repeat bottom left / 0% 4px; 
            transition: background 0.5s ease;
         }
-        .body-c-h3:hover, .body-d-h3:hover {
-           background: linear-gradient( 90deg, #00BACE, lightgreen ,#00BACE) no-repeat bottom left / 100% 4px;
+        .body-c-h3:hover, .body-d-h3:hover, .body-e-h3:hover, .body-f-h3:hover {
+           background: linear-gradient( 90deg, lightgreen ,lightgreen) no-repeat bottom left / 100% 4px;
         }
         em{ 
             color: #B80F0A;
@@ -400,7 +392,248 @@
         .mobile-img{
             display: none;
         }
+        .body-e{
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 10px;
+        }
 
+        .img-slider-container{
+            display: flex;
+            margin-top: 3%;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 10px;
+            padding: 10px;
+            -ms-overflow-style: none;  /* IE & Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+
+        .img-slider-container::-webkit-scrollbar{
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+
+        .img-slider-container img{
+            max-height: 200px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .scroll-btn{
+           background-color: #00BACE;
+           border: none;
+           color: white;
+           font-size: 24px;
+           padding: 10px;
+           cursor: pointer;
+           z-index: 10;
+           border-radius: 50%;
+           transition: 0.3s ease;
+        }
+
+        .scroll-btn:hover{
+           background-color: #007e8e;
+        }
+
+        .scroll-btn.left{
+           margin-right: 10px;
+        }
+
+        .scroll-btn.right{
+           margin-left: 10px;
+        }
+        .sliderimage{
+           transition: 0.4s ease-in-out;
+        }
+        .sliderimage:hover{
+           scale: 1.04;
+        }
+        .p-mainc40{
+           color: #727A82;
+           margin-top: 2%;
+           line-height: 1.5;
+           margin-bottom: 10%;
+        }
+        .h1-mainc40{
+           margin-top: 20px;
+        }
+        .body-f, .sec-f {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: center;
+           gap: 20px;
+           padding: 20px;
+        }
+        .body-f-img{
+           transition: 0.4s ease-in-out;
+           border-radius: 20px;
+           cursor: pointer;
+        }
+        .body-f-img:hover{
+            margin-top: -10px;
+        }
+        .h1-mainc50{
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        .body-e-h3, .body-f-h3{
+            margin-left: 5%;
+        }
+        .footer {
+            background-color: #191919;
+            color: #fff;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.h1-main {
+    display: inline-block;
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+/* Dark Mode Styling */
+.protagonist.black .h1-main {
+    color: white; /* Ensure text is visible */
+}
+
+
+
+
+
+/*        dark mode ccssssss!!!!*/
+/*        dark mode ccssssss!!!!*/
+/*        dark mode ccssssss!!!!*/
+.protagonist.black .body-a,
+.protagonist.black .image-container {
+    background: black !important; /* Override the gradient */
+}
+.protagonist.black .view-you{
+    background: #262727;
+}
+.protagonist.black .view-tik{
+    color: black;
+    background: whitesmoke;
+}
+.protagonist.black .view-you:hover{
+    background: #03e9f4;
+    box-shadow: 0px 0px 30px #03e9f4;
+}
+.protagonist.black .view-tik:hover{
+    background: #39ff14;
+    box-shadow: 0px 0px 30px #39ff14;
+}
+.protagonist.black button:hover{
+    background: #39ff14;
+    box-shadow: 0px 0px 30px #39ff14;
+
+}
+.protagonist.black #contentul:hover{
+    background: #39ff14;
+    box-shadow: 0px 0px 30px #39ff14;
+}
+.protagonist.black .content:hover{
+    background: #03e9f4;
+    box-shadow: 0px 0px 30px #03e9f4;
+}
+
+.protagonist.black .body-a h1,
+.protagonist.black .body-a h2,
+.protagonist.black .body-a h3,
+.protagonist.black .body-a p {
+    color: white !important;
+}
+
+/* DARK MODE for hover boxes (challenges and contents sections) */
+.protagonist.black .text-hover1,
+.protagonist.black .text-hover2,
+.protagonist.black .text-hover3,
+.protagonist.black .text-hover4,
+.protagonist.black .text-hover1sec,
+.protagonist.black .text-hover2sec,
+.protagonist.black .text-hover3sec,
+.protagonist.black .text-hover4sec,
+.protagonist.black .h1-mainc20,
+.protagonist.black .h1-mainc30,
+.protagonist.black .p-mainc20,
+.protagonist.black .p-mainc30,
+.protagonist.black .mobile-img-black,
+.protagonist.black #img-container-black,
+.protagonist.black .image-containersec{
+    background-color: #161616 !important;
+    color: white !important;
+}
+
+.protagonist.black .h1-main,
+.protagonist.black .body-c-h3,
+.protagonist.black .body-d-h3,
+.protagonist.black .body-e-h3,
+.protagonist.black .body-f-h3 {
+    background: linear-gradient(90deg, white, white) no-repeat bottom left / 0% 4px !important;  
+    border-radius: 20px;
+    transition: background 0.5s ease;
+}
+
+.protagonist.black .h1-main:hover,
+.protagonist.black .body-c-h3:hover,
+.protagonist.black .body-d-h3:hover,
+.protagonist.black .body-e-h3:hover,
+.protagonist.black .body-f-h3:hover {
+    background: linear-gradient(90deg, white, white) no-repeat bottom left / 100% 4px !important;  
+    filter: drop-shadow(0px 0px 20px yellow) drop-shadow(0px 0px 10px white);
+}
+.protagonist.black .body-c, 
+.protagonist.black .body-d, 
+.protagonist.black .image-container, 
+.protagonist.black .image-containersec {
+    background: #161616 !important; /* Dark background */
+    color: white !important; /* White text */
+    transition: background 0.3s ease-in-out;
+}
+        .black{
+            background-color: #000000 !important;
+            color: #FFFFFF !important;
+        }
+        .sun, .moon{
+            position: fixed;
+            background: #555555;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            align-content: center;
+            border-radius: 50%;
+            color: white;
+            z-index: 999;
+            margin-left: 70px;
+            margin-top: 9%;
+            cursor: pointer;
+
+        }
+        .sun:hover{
+            background: #39ff14;
+            box-shadow: 0px 0px 30px #39ff14;
+        }
+        .moon:hover{
+            background: #03e9f4;
+            box-shadow: 0px 0px 30px #03e9f4;
+        }
 
 
         /* Mobile Responsive */
@@ -453,11 +686,11 @@
         max-width: 100%;
     }
 
-    .h1-main, .h1-mainc, .h1-mainc20, .h1-mainc30{
+    .h1-main, .h1-mainc, .h1-mainc20, .h1-mainc30,{
         font-size: 35px;
     }
 
-    .p-main, .p-mainc, .p-mainc20, .p-mainc30{
+    .p-main, .p-mainc, .p-mainc20, .p-mainc30, .p-mainc40{
         font-size: 14px;
     }
 
@@ -510,14 +743,14 @@
         background-color: #F5F8FC;
         margin-bottom: 10%;
     }
-    .body-c-h3, .body-d-h3{
+    .body-c-h3, .body-d-h3, .body-e-h3, .body-f-h3{
         margin-bottom: 10%;
         display: block;
         width: auto;
         background: linear-gradient( 90deg, #00BACE, lightgreen ,#00BACE) no-repeat bottom left / 0% 4px; 
         transition: background 0.5s ease;
     }
-    .body-c-h3:hover{
+    .body-c-h3:hover, .body-d-h3:hover, .body-e-h3:hover, .body-f-h3:hover{
         background: linear-gradient( 90deg, #00BACE, lightgreen ,#00BACE) no-repeat bottom left / 100% 4px;
     }
     .p-mainc20, .p-mainc30 {
@@ -539,12 +772,26 @@
     display: inline;
     margin-top: 5%;
   }
+  .scroll-btn {
+    font-size: 20px;
+    padding: 8px;
+  }
+  .sec-f{
+    display: none;
+  }
+  .sun, .moon{
+    margin-top: 40%;
+    max-width: 40px;
+    min-width: 30px;
+    min-height: 30px;
+    max-height: 40px;
+  }
 }
 
     </style>
 </head>
 <body>
-    <div class="protogonist">
+    <div class="protagonist" id="black">
    <ul>
     <li class="menu-toggle">
         <button class="menu-btn">&#9776;</button>
@@ -554,19 +801,20 @@
     
     <li class="content-box">
 
-        <a class="a-tag" href="https://www.youtube.com/@kingpetols1/featured" target="_blank"><span class="content"><strong>Home</strong></span></a>
-      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/videos" target="_blank"><span class="content"><strong>Videos</strong></span></a>
-      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/shorts" target="_blank"><span class="content"><strong>Shorts</strong></span></a>
-      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/streams" target="_blank"><span class="content"><strong>Live</strong></span></a>
-      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/playlists" target="_blank"><span class="content"><strong>Playlist</strong></span></a>
-      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/community"><span class="content"><strong>Posts</strong></span></a>
-     <a class="a-tag" href="https://discord.com/channels/1269042103929933845/1299786621339828285" target="_blank"><span class="content"><strong>Discord</strong></span></a>
+        <a class="a-tag" href="https://www.youtube.com/@kingpetols1/featured" target="_blank"><span class="content" id="contentul"><strong>Home</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/videos" target="_blank"><span class="content" id="contentul"><strong>Videos</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/shorts" target="_blank"><span class="content" id="contentul"><strong>Shorts</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/streams" target="_blank"><span class="content" id="contentul"><strong>Live</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/playlists" target="_blank"><span class="content" id="contentul"><strong>Playlist</strong></span></a>
+      <a class="a-tag" href="https://www.youtube.com/@kingpetols1/community"><span class="content" id="contentul"><strong>Posts</strong></span></a>
+     <a class="a-tag" href="https://discord.com/channels/1269042103929933845/1299786621339828285" target="_blank"><span class="content" id="contentul"><strong>Discord</strong></span></a>
     </li>
 
     <li class="user-container">
         <img class="user" src="https://yt3.googleusercontent.com/q-UAt5t0sI76RNoC4_afTIK-1NZAnUJ37W4E9EUn8bKOGJ_AI_B-C4109eDPVI17Oda7kNx2Pw=s160-c-k-c0x00ffffff-no-rj"><li>
 
-
+    <span class="sun" onclick="black()"><i class="fa-solid fa-sun"></i></span>
+    <span class="moon" onclick="black()"><i class="fa-solid fa-moon"></i></span>
     <li><a href="https://www.youtube.com/channel/UC1KoykoDcSL7jbuKvuiY3bw?sub_confirmation=1" target="_blank">
     <button><strong>Subscribe</strong></button></a></li>
    </ul>
@@ -584,8 +832,11 @@
     </div>
 
    <div class="overlay"></div>
+   
+   <div class="body-a" >
+    
 
-   <div class="body-a">
+
        <div class="text-container">
           <h1 class="h1-main"><strong>Welcome to the official fan site of <em>kingpetols1</em>!</strong></h1>
           <p class="p-main">✨TOP 25 MOBILE FOR NA✨(confirmed by top NA player). Dive into his gaming world, explore his latest content, and stay updated with everything about your favorite gaming creator.</p>
@@ -616,7 +867,7 @@
 <hr>
 
 <div class="body-c">
-        <div class="image-container">
+        <div class="image-container" id="img-container-black">
             <img id="changing-img" class="changing-img" src="bloxy_night.png">
         </div>
         <div class="text-containerc20">
@@ -702,15 +953,58 @@
         </div>
     </div>
     </div>
-       <div class="image-containersec">
+       <div class="image-containersec" id="img-container-blacksec">
             <img id="changing-imgsec" class="changing-imgsec" src="ghoulv4.png">
         </div>
 </div>
-<hr>
+<hr> 
+<h3 class="body-e-h3">Popular Videos</h3>
 <div class="body-e">
-    <h1>STILL IN DEVELOPING PROCESS SORRY FOR LATE UPDATE!!!!</h1>
+
+  <button class="scroll-btn left" onclick="scrollSlider(-1)">&#10094;</button>
+  <div class="img-slider-container" id="img-slider">
+    <div class="text-img"><img class="sliderimage" src="image1.png" alt="img"><h2 class="h1-mainc40">This yeti Combo is INSANE…</h2><p class="p-mainc40">Trying this new addded yeti fruit which turn out really good for pvp stuffs.</p></div>
+    <div class="text-img"><img class="sliderimage" src="image2.png" alt="img"><h2 class="h1-mainc40">Dragon storm with strong grip is too op for bounty hunt!</h2><p class="p-mainc40">Getting strong grip in dragonstrome might be the 4th strong grip streak!</p></div>
+    <div class="text-img"><img class="sliderimage" src="image3.png" alt="img"><h2 class="h1-mainc40">Using random peoples favorite sword for bounty hunting</h2><p class="p-mainc40">Random peoples gave me their fav sword for me to bountyhunt, It was very intresting.</p></div>
+    <div class="text-img"><img class="sliderimage" src="image4.png" alt="img"><h2 class="h1-mainc40">Finally reaching 25m bounty</h2><p class="p-mainc40">After a lot of struggle Petols finally manage to reach 25mil bounty, sit back and enjoy his journey!</p></div>
+    <div class="text-img"><img class="sliderimage" src="image5.png" alt="img"><h2 class="h1-mainc40">This dragon heart build can destroy ANYONE in PvP</h2><p class="p-mainc40">This new Dragon Heart sword was too strong and unfair for other people 😭.</p></div>
+    <div class="text-img"><img class="sliderimage" src="image6.png" alt="img"><h2 class="h1-mainc40">Sand fruit is OVERPOWERED for PvP</h2><p class="p-mainc40">This sand combo could literally carry out a 30mil bounty player easiyd with just little bit of skills..</p></div>
+    <div class="text-img"><img class="sliderimage" src="image7.png" alt="img"><h2 class="h1-mainc40">Fox lamp is the smoothest sword in the game</h2><p class="p-mainc40">This sword is literally the best sword visually and also so smooth that people are melting from its blue flame 😭.</p></div>
+    <div class="text-img"><img class="sliderimage" src="image8.png" alt="img"><h2 class="h1-mainc40">This underrated sword makes you UNBEATABLE</h2><p class="p-mainc40">Not the best but still does tons of damage to shark user too, This sword is actually from hell ☠️.</p></div>
+  </div>
+  <button class="scroll-btn right" onclick="scrollSlider(1)">&#10095;</button>
 </div>
-<hr>
+  <hr> 
+<h3 class="body-f-h3">Shorts</h3>
+  <div class="body-f">
+      
+      <div class="img-div"><img class="body-f-img" src="yeti.png"><h1 class="h1-mainc50">Yeti combos 🐻‍❄️❤️</h1></div>
+      <div class="img-div"><img class="body-f-img" src="buddy.png"><h1 class="h1-mainc50">buddy sword combo</h1></div>
+      <div class="img-div"><img class="body-f-img" src="dragon.png"><h1 class="h1-mainc50">Dragon combos🐉🔥</h1></div>
+      <div class="img-div"><img class="body-f-img" src="dough.png"><h1 class="h1-mainc50">Dough Combos 🍩</h1></div>
+      <div class="img-div"><img class="body-f-img" src="ghost.png"><h1 class="h1-mainc50">
+Ghost combo👻</h1></div>
+
+<div class="sec-f">
+      <div class="img-div"><img class="body-f-img" src="ghost2.png"><h1 class="h1-mainc50">
+Cdk combos🔥</h1></div>
+      <div class="img-div"><img class="body-f-img" src="kit.png"><h1 class="h1-mainc50">
+Kitsune x sanguine <br>x e claw ❤️</h1></div>
+      <div class="img-div"><img class="body-f-img" src="kit2.png"><h1 class="h1-mainc50">
+Confirmed by top<br> NA mobile player😊</h1></div>
+      <div class="img-div"><img class="body-f-img" src="pain.png"><h1 class="h1-mainc50">
+Ez pain combo🤕</h1></div>
+      <div class="img-div"><img class="body-f-img" src="sand.png"><h1 class="h1-mainc50">
+Sand combos ⏳</h1>
+</div>
+</div>
+  </div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 <strong>kingpetols1</strong>. All rights reserved. Fan website made with ❤️ by Intro</p>
+  </div>
+</footer>
+
 </div>
 
       <script src="https://apis.google.com/js/platform.js"></script>
@@ -786,7 +1080,6 @@ observer.observe(video);
     element.classList.add("active");
   }
 
-  // Second image set for changeImagesec function (renamed variable to avoid conflict)
   const imagesSec = [
     "ghoulv4.png",
     "handcam.png",
@@ -800,6 +1093,89 @@ observer.observe(video);
     document.querySelectorAll(".itemsec").forEach(itemsec => itemsec.classList.remove("activesec"));
     element.classList.add("activesec");
   }
-   </script>
+  //scrolling image javaaaa!!!!!!
+  //scrolling image javaaaa!!!!!!
+  //scrolling image javaaaa!!!!!!
+
+  const slider = document.getElementById('img-slider');
+
+  // Scroll with button
+  function scrollSlider(direction) {
+    const scrollAmount = slider.clientWidth * 0.8;
+    slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+
+  // Drag to scroll (both desktop and mobile)
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // For touch (mobile)
+  slider.addEventListener('touchstart', (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('touchend', () => {
+    isDown = false;
+  });
+  slider.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // dark mode JJJSSS
+  // dark mode JJJSSS
+  // dark mode JJJSSS
+
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.querySelector(".protagonist");
+    const toggleBtn = document.querySelector(".moon");
+    const heading = document.querySelector(".h1-main");
+
+    function toggleDarkMode() {
+        body.classList.toggle("black");
+
+        // Reset Animation
+        heading.style.animation = "none";
+        setTimeout(() => {
+            heading.style.animation = "slideInLeft 1s ease-out forwards";
+        }, 10);
+
+        // Toggle Icon
+        if (body.classList.contains("black")) {
+            toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+    }
+
+    toggleBtn.addEventListener("click", toggleDarkMode);
+});
+ </script>
 </body>
 </html>
