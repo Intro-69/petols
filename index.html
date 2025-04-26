@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="profile.png" type="image/x-icon">
+    <link rel="icon" href="C:\Users\Nischal\OneDrive\Documents\Desktop\website project\profile.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Petols</title>
     <style>
+
+        
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +32,7 @@
         ul {
             list-style: none;
             padding: 0 20px;
-            background-color: #222222;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
             height: 65px;
             display: flex;
@@ -104,7 +106,7 @@
             left: -250px;
             width: 250px;
             height: 100%;
-            background-color: #0E0E11;
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1000;
             transition: left 0.3s ease-in-out;
             padding-top: 20px;
@@ -406,9 +408,11 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             gap: 10px;
-            padding: 10px;
+            padding: 0px;
             -ms-overflow-style: none;  /* IE & Edge */
             scrollbar-width: none;     /* Firefox */
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
         }
 
         .img-slider-container::-webkit-scrollbar{
@@ -423,14 +427,18 @@
             cursor: pointer;
         }
 
-        .scroll-btn{
-           background-color: #00BACE;
+        #scroll-btn{
+           background: rgba(0, 0, 0, 0.4);
+           justify-content: center;
+           text-align: center;
+           align-content: center;
+           height: 55px;
+           width: 200px;
            border: none;
            color: white;
            font-size: 24px;
-           padding: 10px;
            cursor: pointer;
-           z-index: 10;
+           z-index: 99;
            border-radius: 50%;
            transition: 0.3s ease;
         }
@@ -440,14 +448,18 @@
         }
 
         .scroll-btn-left{
-           margin-right: 10px;
+           margin-right: -50px;
         }
 
         .scroll-btn-right{
-           margin-left: 10px;
+           margin-right: 10px;
+
         }
         .sliderimage{
            transition: 0.4s ease-in-out;
+           user-select: none;
+           pointer-events: none;
+           scroll-snap-align: start;
         }
         .sliderimage:hover{
            scale: 1.04;
@@ -472,9 +484,8 @@
            transition: 0.4s ease-in-out;
            border-radius: 20px;
            cursor: pointer;
-        }
-        .body-f-img:hover{
-            margin-top: -10px;
+           perspective: 1000px;
+           
         }
         .h1-mainc50{
             font-size: 18px;
@@ -513,10 +524,6 @@
 .protagonist.black .h1-main {
     color: white; /* Ensure text is visible */
 }
-
-
-
-
 
 /*        dark mode ccssssss!!!!*/
 /*        dark mode ccssssss!!!!*/
@@ -634,13 +641,76 @@
             background: #03e9f4;
             box-shadow: 0px 0px 30px #03e9f4;
         }
+.protagonist.black #scrollToTop {
+    background: rgba(255, 255, 255, 0.4) !important;  /* For white version */
+}
+
+.protagonist.black #scrollToTop:hover {
+    background-color: #00dddd;
+}
+
+#scrollToTop {
+  align-content: center;
+  text-align: center;
+  position: fixed;
+  bottom: 40px;
+  height: 6%;
+  width: 3%;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+#scrollToTop:hover {
+  background-color: #00dddd;
+}
 
 
+.body-f-img {
+  width: 100%;
+  height: auto;
+  border: 3px solid #39FF14; /* neon green border */
+  border-radius: 15px; /* optional rounded corners */
+  transition: transform 0.4s ease, border 0.4s ease;
+  object-fit: cover;
+}
+
+.img-div {
+  overflow: hidden;
+  border-radius: 20px; /* match the image rounded edges if you want */
+}
+
+.body-f-img:hover {
+  transform: scale(1.2); /* zooms in image */
+}
+
+
+
+
+
         /* Mobile Responsive */
         /* Mobile Responsive */
         /* Mobile Responsive */
         /* Mobile Responsive */
         /* Mobile Responsive */
+
+@media (max-width: 600px) {
+  #scrollToTop {
+    font-size: 20px;
+    padding: 10px 10px;
+    width: 12%;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
 @media screen and (max-width: 768px){
 
     .menu-toggle {
@@ -654,7 +724,7 @@
     }
 
     .menu-container {
-        width: 30%;
+        width: 50%;
     }
 
     .content-box {
@@ -772,13 +842,37 @@
     display: inline;
     margin-top: 5%;
   }
-  .scroll-btn {
+  #scroll-btn {
     font-size: 20px;
     padding: 8px;
+    width: 70%;
+    height: 50px;
   }
-  .sec-f{
-    display: none;
+  .sliderimage{
+    width: 300px;
+    height: 200px;
   }
+  .h1-mainc40{
+    font-size: 12px;
+  }
+  .p-mainc40{
+    font-size: 10px;
+  }
+.body-f {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.img-div {
+  flex: 1 1 calc(25% - 20px); /* 4 items per row with gap handled */
+  max-width: calc(25% - 20px);
+  box-sizing: border-box;
+}
+
+
   .sun, .moon{
     margin-top: 40%;
     max-width: 40px;
@@ -961,7 +1055,7 @@
 <h3 class="body-e-h3">Popular Videos</h3>
 <div class="body-e">
 
-  <button class="scroll-btn-left" onclick="scrollSlider(-1)">&#10094;</button>
+  <div id="scroll-btn" class="scroll-btn-left" onclick="scrollSlider(-1)">&#10094;</div>
   <div class="img-slider-container" id="img-slider">
     <div class="text-img"><img class="sliderimage" src="image1.png" alt="img"><h2 class="h1-mainc40">This yeti Combo is INSANE…</h2><p class="p-mainc40">Trying this new addded yeti fruit which turn out really good for pvp stuffs.</p></div>
     <div class="text-img"><img class="sliderimage" src="image2.png" alt="img"><h2 class="h1-mainc40">Dragon storm with strong grip is too op for bounty hunt!</h2><p class="p-mainc40">Getting strong grip in dragonstrome might be the 4th strong grip streak!</p></div>
@@ -972,7 +1066,7 @@
     <div class="text-img"><img class="sliderimage" src="image7.png" alt="img"><h2 class="h1-mainc40">Fox lamp is the smoothest sword in the game</h2><p class="p-mainc40">This sword is literally the best sword visually and also so smooth that people are melting from its blue flame 😭.</p></div>
     <div class="text-img"><img class="sliderimage" src="image8.png" alt="img"><h2 class="h1-mainc40">This underrated sword makes you UNBEATABLE</h2><p class="p-mainc40">Not the best but still does tons of damage to shark user too, This sword is actually from hell ☠️.</p></div>
   </div>
-  <button class="scroll-btn-right" onclick="scrollSlider(1)">&#10095;</button>
+  <div id="scroll-btn" class="scroll-btn-right" onclick="scrollSlider(1)">&#10095;</div>
 </div>
   <hr> 
 <h3 class="body-f-h3">Shorts</h3>
@@ -980,7 +1074,7 @@
       
       <div class="img-div"><img class="body-f-img" src="yeti.png"><h1 class="h1-mainc50">Yeti combos 🐻‍❄️❤️</h1></div>
       <div class="img-div"><img class="body-f-img" src="buddy.png"><h1 class="h1-mainc50">buddy sword combo</h1></div>
-      <div class="img-div"><img class="body-f-img" src="dragon.png"><h1 class="h1-mainc50">Dragon combos🐉🔥</h1></div>
+      <div class="img-div"><img class="body-f-img" src="C:/Users/Nischal/OneDrive/Documents/Desktop/website project/dragon.png"><h1 class="h1-mainc50">Dragon combos🐉🔥</h1></div>
       <div class="img-div"><img class="body-f-img" src="dough.png"><h1 class="h1-mainc50">Dough Combos 🍩</h1></div>
       <div class="img-div"><img class="body-f-img" src="ghost.png"><h1 class="h1-mainc50">
 Ghost combo👻</h1></div>
@@ -992,10 +1086,6 @@ Cdk combos🔥</h1></div>
 Kitsune x sanguine <br>x e claw ❤️</h1></div>
       <div class="img-div"><img class="body-f-img" src="kit2.png"><h1 class="h1-mainc50">
 Confirmed by top<br> NA mobile player😊</h1></div>
-      <div class="img-div"><img class="body-f-img" src="pain.png"><h1 class="h1-mainc50">
-Ez pain combo🤕</h1></div>
-      <div class="img-div"><img class="body-f-img" src="sand.png"><h1 class="h1-mainc50">
-Sand combos ⏳</h1>
 </div>
 </div>
   </div>
@@ -1005,7 +1095,8 @@ Sand combos ⏳</h1>
   </div>
 </footer>
 
-</div>
+<div id="scrollToTop" class="scrollToTop" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></div>
+
 
       <script src="https://apis.google.com/js/platform.js"></script>
       <script type="text/javascript">
@@ -1148,6 +1239,15 @@ observer.observe(video);
     slider.scrollLeft = scrollLeft - walk;
   });
 
+  function scrollSlider(direction) {
+    const container = document.getElementById("img-slider");
+    const scrollAmount = 300;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
   // dark mode JJJSSS
   // dark mode JJJSSS
   // dark mode JJJSSS
@@ -1176,6 +1276,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleBtn.addEventListener("click", toggleDarkMode);
 });
+
+ window.onscroll = function () {
+    const scrollBtn = document.getElementById("scrollToTop");
+    const scrollY = window.scrollY;
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollY > totalHeight * 0.01) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top smoothly
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
  </script>
 </body>
 </html>
